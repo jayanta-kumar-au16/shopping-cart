@@ -8,7 +8,7 @@ module.exports = function authenticateToken(req, res, next) {
 
     if (!authToken) {
       return res.json({ error: "token unavailable" });
-    }else{
+    } else {
       const verified = jwt.verify(authToken, SELLER_KEY);
       console.log("Verified", verified);
       req.user = verified.seller;
