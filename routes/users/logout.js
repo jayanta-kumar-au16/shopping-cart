@@ -6,7 +6,7 @@ router.get("/logout", async (req, res) => {
   try {
     res.clearCookie("accessToken");
     console.log("logout successfully");
-    res.redirect("/login&signup");
+    res.redirect("/");
   } catch (error) {
     res.status(500).send(error);
   }

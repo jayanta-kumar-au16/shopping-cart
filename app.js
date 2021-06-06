@@ -1,9 +1,9 @@
-require("dotenv").config();
+const path = require('path');
+require("dotenv").config({path: path.resolve(__dirname, './.env')});
 const express = require("express");
 const exphbs = require("express-handlebars");
 const mongoose = require("mongoose");
 const cookieparser = require("cookie-parser");
-const path = require('path');
 
 
 const signup = require("./routes/users/signup");
@@ -55,7 +55,7 @@ mongoose.connect(
   }
 );
 
-app.get("/login&signup", (req, res) => {
+app.get("/", (req, res) => {
   res.render("login", { layout: "main" });
 });
 app.use("/user", signup);

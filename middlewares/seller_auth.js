@@ -16,6 +16,6 @@ module.exports = function authenticateToken(req, res, next) {
     next();
   } catch (error) {
     // res.status(401).send("Token Invalid");
-    res.redirect('/login&signup')
+    res.redirect('/')
   }
 };
