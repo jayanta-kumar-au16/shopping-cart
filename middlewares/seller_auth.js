@@ -12,7 +12,7 @@ module.exports = function authenticateToken(req, res, next) {
     }
     const verified = jwt.verify(authToken, SELLER_KEY);
     console.log("Verified", verified);
-    req.user = verified.seller;
+    req.seller = verified.seller;
     req.authToken = authToken;
     next();
   } catch (error) {
