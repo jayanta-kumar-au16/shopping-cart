@@ -39,7 +39,7 @@ app.engine("hbs", exphbs({ extname: "hbs" }));
 app.set("view engine", "hbs");
 
 app.use(express.static(path.join(__dirname , '/public/')));
-const { DATABASE_URL } = process.env;
+const { DB_URL } = process.env;
 mongoose.connect(DB_URL,
   {
     useNewUrlParser: true,
