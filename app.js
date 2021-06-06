@@ -78,6 +78,6 @@ app.use("/seller", Sellerauth, update);
 app.use("/seller",Sellerauth, product_update);
 app.use("/seller",Sellerauth, product_delete);
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log("server started");
 });
