@@ -42,7 +42,7 @@ const { DB_USER } = process.env;
 const {DB_PASS} = process.env;
 
 mongoose.connect(
-  `mongodb://${DB_USER}:${DB_PASS}@cluster0.ieru3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority` ,
+  `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.ieru3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority` ,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
