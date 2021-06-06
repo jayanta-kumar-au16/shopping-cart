@@ -1,0 +1,39 @@
+body{
+   
+    background-color: rgb(226, 242, 243);
+}
+ul{
+    margin-left: 76%;
+}
+.nav-link{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+#name{
+    color: rgb(187, 255, 0);
+    font-weight: bold;
+}
+
+.card-text{
+    color:crimson;
+}
+.card-title{
+    font-family: 'Cinzel', serif;
+}
+
+.row{
+    margin-left: 5%;
+}
+.card{
+    background-color: rgba(177, 217, 230, 0.678);
+    border: none;
+    box-shadow: 
+        -2px -2px 4px 2px #fff,
+         2px 2px 4px 4px #c4c4c4;
+
+}
+img{
+    height: 30vh;
+    width: 20vw;
+}

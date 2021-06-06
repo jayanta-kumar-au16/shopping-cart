@@ -1,0 +1,106 @@
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="back" href="/user/home"><i class="fas fa-chevron-left"></i></a>
+                <a class="navbar-brand" id="name">Shopping-cart</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/user/home"><i
+                                class="fa fa-home"
+                                aria-hidden="true"
+                            ></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/cart"><i class="fas fa-shopping-cart"></i>Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<div class="container">
+    <h3>ADD ADDRESS</h3>
+    <form action="/user/address" method="POST">
+        <div class="f-control">
+            <label for="name">Name</label>
+            <input  class="form-control" type="text" id="fstname" placeholder="Enter your name..." autocomplete="name" name="name">
+        </div>
+        <div class="f-control">
+            <label for="phone">phone number</label>
+            <input class="form-control" type="tel" id="phn" placeholder="Enter your phone num..." autocomplete="tel" name="phone" maxlength="10">
+        </div>
+        <div class="f-control">
+            <label for="adress" id="">Adress(Area and street)</label>
+            <textarea class="form-control" name="address"></textarea>
+        </div>
+        <div class="f-control">
+            <label for="city">City/District/Town</label>
+            <input  class="form-control" type="text" id="city" placeholder="Enter a city..." autocomplete="city" name="city">
+        </div>
+        <select  name="state"class="form-select" aria-label="Default select example">
+            <option value="" disabled="" selected>--Select State--</option>
+            <option value="Andaman &amp; Nicobar Islands">Andaman &amp; Nicobar Islands</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu">Dadra &amp; Nagar Haveli
+                &amp; Daman &amp; Diu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+        </select>
+        <div class="adresstype">
+            <label>Home </label>
+            <input id="home" value="home" type="radio" name="locationType">
+            <label>Work</label>
+            <input id="work"  value="work"type="radio" name="locationType">
+        </div>
+        <button class="btn btn-primary"type="submit">Submit</button>
+        <button class="btn btn-success"type="reset">Reset</button>
+    </form>
+</div>
+   

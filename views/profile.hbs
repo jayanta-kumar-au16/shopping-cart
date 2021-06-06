@@ -1,0 +1,72 @@
+{{#if get_user}}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="name">My Profile</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/user/home"><i
+                            class="fa fa-home"
+                            aria-hidden="true"
+                        ></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <h3>Personal info</h3>
+            <form class="form-horizontal" action="/user/profile/{{get_user._id}}" method="POST">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="firstname">First name:</label>
+                    <div class="col-lg-8">
+                    <input class="f-control" type="text" value= {{get_user.firstname}} name="firstname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="lastname">Last name:</label>
+                    <div class="col-lg-8">
+                    <input class="f-control" type="text" value= {{get_user.lastname}} name="lastname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="email">Email:</label>
+                    <div class="col-lg-8">
+                    <input class="f-control" type="email" value= {{get_user.email}} name="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="password">Password:</label>
+                    <div class="col-md-8">
+                    <input class="f-control" type="password" value={{get_user.password}} name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="contactNumber">Contact:</label>
+                    <div class="col-md-8">
+                    <input class="f-control" type="number" value= {{get_user.contactNumber}} name="contactNumber">
+                    </div>
+                </div>
+                <button type="submit"  class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+{{/if}}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+
+ul{
+    margin-left: 85%;
+}
+.nav-link{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+#name{
+    color: rgb(196, 222, 238);
+    font-weight: bold;
+}
+h3{
+    text-align: center;
+}
+.form{
+    padding: 1rem 1rem;
+}
+.container{
+    margin-left: 8%;
+    margin-top: 3%;
+    width: 100%;
+    max-width: 800px;
+    background-color: rgb(217, 236, 240);
+    box-shadow: 
+        -2px -2px 6px 2px #fff,
+         2px 2px 6px 2px #c4c4c4;
+    border-radius: 10px;
+    animation: animate 1.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+label{
+    font-weight: 700;
+    color: #000000;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.f-control{
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    
+}
+input{
+    display: block;
+    height:40px;
+    width: 100%;
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    color: rgb(15, 14, 14);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: 0.25s ease all;
+    box-shadow: 
+    inset -2px -2px 3px 2px #fff,
+    inset 2px 2px 3px 2px #c5c5c5;
+}
+input:focus{
+    box-shadow: 
+    inset -1px -1px 3px 1px #fff,
+    inset 1px 1px 3px 1px #c4c4c4;
+}
+button{
+    margin-top: 4%;
+    cursor: pointer;
+    transition: 0.25s ease all;
+    margin-top: 0.75rem;
+    width:20%;
+}
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 8;
+        transform: translateY(0px);
+    }
+}

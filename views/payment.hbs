@@ -1,0 +1,66 @@
+{{#if add.addresses}}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" id="name">Shopping-cart</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <form id="form" action="/user/checkedout/Successful/{{add.amount}}" method="POST">
+        {{#each add.addresses}}
+            <div class="Address-block" style="border: 1px solid black; width:50vw;margin:1vh;">
+                <input type="radio" id={{city}} name="Address" value={{address}} required>
+                <label for={{city}}><strong></b>Name: {{name}}<br>
+                Address: {{address}}<br>
+                City: {{city}}
+                </strong></label>
+            </div>
+        {{/each}}
+        <button type="submit">Cash on Delivery</button>
+    </form>
+{{else}}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" id="name">Shopping-cart</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <a href="/user/address"><button> Add a Address First </button></a>
+{{/if}}

@@ -1,0 +1,44 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="name">Shopping-cart</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if get_user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"></i>{{get_user.firstname}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="/seller/profile">My profile</a></li>
+            </ul>
+          </li>
+        {{/if}}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/seller/home"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/seller/logout"><i class="fas fa-power-off"></i>Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<div class="btns">
+    <a href="/seller/addproducts"><button class="btn btn-success">Add Product</button></a>
+    <a href="/seller/update"><button class="btn btn-info">Update Product</button></a>
+</div>

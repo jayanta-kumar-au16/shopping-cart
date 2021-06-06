@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat',sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url('https://anthropocene.pixel-online.org/common/img/login.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    position: relative;
+}
+.btn-close{
+    height:2.8%;
+    margin-left: -6%;
+    background-color: rgb(238, 236, 209);
+    box-shadow: none;
+}
+#Alert{
+    margin-top: 2%;
+    margin-left: 5%;
+    width:90%;
+    background-color: rgb(238, 236, 209);
+}
+span{
+    margin-left: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+#exist{
+    position: absolute;
+    margin-top: -31%;
+    margin-left: 63%;
+    height:50px;
+    width:20%;
+}
+p{
+    font-weight: bolder;
+    text-align: center;
+    margin-top: -2%;
+}
+#bttn{
+    height:30px;
+    width:10%;
+    box-shadow: none;
+    background-color: rgb(236, 218, 218);
+    position: absolute;
+    top:-17%;
+    left:93%;
+}
+#Exist{
+    position: absolute;
+    margin-top: -31%;
+    margin-left: -57%;
+    height:50px;
+    width:20%;
+}
+#btn{
+    height:30px;
+    width:10%;
+    box-shadow: none;
+    background-color: rgb(236, 218, 218);
+    position: absolute;
+    top:-17%;
+    left:90%;
+}
+#error{
+    position: absolute;
+    margin-top: -31%;
+    margin-left: 63%;
+    height:50px;
+    width:20%;
+}
+#pass{
+    position: absolute;
+    margin-top: -31%;
+    margin-left: -57%;
+    height:50px;
+    width:20%;
+}
+.container{
+    margin-right: 8vw;
+    width: 28vw;
+    background-color: rgb(187, 240, 187);
+    box-shadow: 
+        -2px -2px 6px 2px #fff,
+        2px 2px 6px 2px #c4c4c4;
+    border-radius: 10px;
+    animation: animate 1.5s ease;
+    position: relative;
+}
+.container2{
+    margin-left: 8%;
+    width: 28vw;
+    background-color: rgb(189, 235, 243);
+    box-shadow: 
+        -2px -2px 6px 2px #fff,
+        2px 2px 6px 2px #c4c4c4;
+    border-radius: 10px;
+    animation: animate 1.5s ease;
+    position: relative;
+}
+.head{
+    height:50px;
+    width:100%;
+    position:absolute;
+    top:-1%;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+    display: block;
+    text-align: center;
+}
+h4{
+    color:rgb(255, 255, 255);
+    font-family:cyrillic;
+    font-weight: bolder;
+    margin-top: 1%;  
+}
+#sign{
+    color:rgb(187, 255, 0);
+}
+.form{
+    padding: 2rem 1rem;
+}
+h1{
+    text-align: center;
+    color: #626464;
+    margin-top: 0;
+    font-weight: 800;
+    font-size: 34px;
+    margin-bottom: 1rem;
+}
+.f-control{
+    position: relative;
+    margin-bottom: 1rem;
+    /* padding-bottom: 1rem; */
+    
+}
+label{
+    font-weight: 700;
+    color: #2b2c2c;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+input{
+    display: block;
+    width: 100%;
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    color: #aaa;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: 0.25s ease all;
+    box-shadow: 
+    inset -4px -4px 10px 4px #fff,
+    inset 4px 4px 10px 4px #c4c4c4;
+}
+::placeholder{
+    color: #aaa; 
+}
+input:focus{
+    box-shadow: 
+    inset -1px -1px 3px 1px #fff,
+    inset 1px 1px 3px 1px #c4c4c4;
+}
+small{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    font-size: 0.8rem;
+    display: none;
+    font-weight: 600;
+}
+
+.form-control.error small{
+    display: block;
+    color: #f00;
+}
+button{
+    color: #aabbbb;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: -4px -4px 13px 4px #fff,
+                4px 4px 13px 4px #c4c4c4;
+    transition: 0.25s ease all;
+    margin-top: 0.75rem;
+}
+button:focus{
+    box-shadow: -4px -4px 13px 4px #fff,
+    4px 4px 13px 4px #c4c4c4;
+}
+button:hover{
+    box-shadow: -3px -3px 8px 3px #fff,
+    3px 3px 8px 3px #c4c4c4;
+}
+a{
+    text-decoration: none;
+    color: #aabbbb;
+    font-size: small;
+    font-weight: bold;
+    position: absolute;
+    top:95%;
+    left:23%;
+
+}
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 5;
+        transform: translateY(0px);
+    }
+}

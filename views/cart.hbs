@@ -1,0 +1,91 @@
+{{#if all_items.products}}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" id="name">Shopping-cart</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/home"><i
+                        class="fa fa-home"
+                        aria-hidden="true"  
+                    ></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+    {{#each all_items.products}}
+        <div class="details">
+            <div class="second">
+                <h4 class="name"><strong>product :</strong>{{Name}}</h4>
+                <h4 class="qty"><strong>qty :</strong>{{quantity}}</h4>
+                <h4 class="price"><strong>price :</strong>₹{{price}}.00</h4>
+            </div>
+            <img src="{{image}}" alt="img">
+            <form action="/user/cart/remove/{{product_id}}" method="POST">
+                <button class="btn btn-outline-danger">Remove</button>
+            </form>
+        </div>
+    {{/each}}
+    <div class="total">
+        <h5><strong>Total price :</strong>₹{{all_items.Total}}.00 </h5>
+        <br>
+        <h5><strong>Delivery charge :</strong>₹40.00 </h5>
+        <br>
+        <hr>
+        <h4><strong>Grand Total :</strong>₹{{all_items.grand}}.00 </h4>
+        <br>
+        <form action="/user/checkout/payment/{{all_items.grand}}" method="POST">
+            <button class="btn btn-success">Check out</button>
+        </form>
+    </div>
+{{else}}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" id="name">Shopping-cart</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/home"><i
+                        class="fa fa-home"
+                        aria-hidden="true"  
+                    ></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+<h2>Cart is empty</h2>
+{{/if}}

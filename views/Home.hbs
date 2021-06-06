@@ -1,0 +1,157 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="name">Shopping-cart</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if get_user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"> {{get_user.firstname}}</i> 
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="/user/profile">My profile</a></li>
+              <li><a class="dropdown-item" href="/user/address">Address</a></li>
+            </ul>
+          </li>
+        {{/if}}
+          <li class="nav-item">
+            <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/cart"><i class="fas fa-shopping-cart"></i>Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="categories">
+  {{!-- <div class="card">
+    <a href="/user/all_products"><img
+        class="one"
+        src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-hand-painted-blue-shopping-cart-elements-png-image_5254610.jpg"
+        alt="image"
+      />
+      <h4>All-items</h4></a>
+  </div> --}}
+  <div class="card">
+    <a href="/user/Grocery"><img
+        class="one"
+        src="https://slpanda.com/wp-content/uploads/2021/01/ONLY-20-LEFT-2.png"
+        alt="image"
+      />
+      <h4>Grocery</h4></a>
+  </div>
+  <div class="card">
+    <a href="/user/Home_Essentials"><img
+        class="one"
+        src="https://www.pngkit.com/png/detail/437-4373322_sofa-png-images-hd.png"
+        alt="image"
+      />
+      <h4>Home essentials</h4></a>
+  </div>
+  <div class="card">
+    <a href="/user/Electronics"><img
+        class="one"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQayNsPZ5UyTIrgmGWKRPW2ekuWfdSdC-Z9pw&usqp=CAU"
+        alt="image"
+      />
+      <h4>Electronics</h4></a>
+  </div>
+</div>
+<br />
+<br />
+<div
+  id="carouselExampleInterval"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img
+        src="https://cdn.wallpapersafari.com/90/19/9DsRL5.jpg"
+        class="d-block w-100"
+        alt="image"
+      />
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img
+        src="https://wallpapercave.com/wp/wp2505774.jpg"
+        class="d-block w-100"
+        alt="Nikon"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://s3.envato.com/files/328228504/front%20view%20(black%20empty%20cup)%20on%20the%20dark%20blue%20background%20coffee%20breakfast%20snack%20color%20plate%20tea.jpg"
+        class="d-block w-100"
+        alt="Nikon"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://www.lookinggoodfurniture.com/wp-content/uploads/2018/03/Nori-Sofa-set-3-seater.jpg"
+        class="d-block w-100"
+        alt="Gopro"
+      />
+    </div>
+     <div class="carousel-item">
+      <img
+        src="https://www.borrowlenses.com/blog/wp-content/uploads/2017/08/Hero-1.jpg"
+        class="d-block w-100"
+        alt="Gopro"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://c4.wallpaperflare.com/wallpaper/105/986/450/speakers-black-home-theater-system-wallpaper-preview.jpg"
+        class="d-block w-100"
+        alt="Gopro"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/I/81t2A6uhm4L._SL1500_.jpg"
+        class="d-block w-100"
+        alt="Gopro"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://i.pinimg.com/originals/21/5a/66/215a6630ad19caf77d4e5bd06fcebe84.jpg"
+        class="d-block w-100"
+        alt="Gopro"
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

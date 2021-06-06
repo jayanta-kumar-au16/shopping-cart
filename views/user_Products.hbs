@@ -1,0 +1,60 @@
+{{#if get_allproduct}}
+  <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="back" href="/user/home"><i class="fas fa-chevron-left"></i></a>
+                <a class="navbar-brand" id="name">Shopping-cart</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/user/home"><i
+                                class="fa fa-home"
+                                aria-hidden="true"
+                            ></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i>Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/cart"><i class="fas fa-shopping-cart"></i>Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="row">
+        {{#each get_allproduct}}
+            <div class="mt-5 col-6 col-md-3 col-lg-3">
+                <div class="card" style="width: 18vw;">
+                    <img src="{{this.image}}" class="card-img-top" alt="{{this.productName}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.productName}}</h5>
+                        <p class="card-text">₹{{this.price}}.00<br>
+                        <form action="/user/cart/{{this._id}}" method='POST'>
+                            <input type="hidden" name="category" value={{this.category}}>
+                            <input type="hidden" name="productName" value={{this.productName}}>
+                            <input type="hidden" name="price" value={{this.price}}>
+                            <input type="hidden" name="image" value={{this.image}}>
+                            
+                            <button  class="btn btn-primary" type="submit">add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+<h2>No products avialable</h2>
+{{/if}}
