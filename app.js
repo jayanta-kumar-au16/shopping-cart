@@ -41,7 +41,7 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname , '/public/')));
 const { DATABASE_URL } = process.env;
 mongoose.connect(
-  DATABASE_URL,
+  `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.ieru3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
