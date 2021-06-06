@@ -7,8 +7,7 @@ module.exports = function authenticateToken(req, res, next) {
     let authToken = req.cookies["accessToken"];
 
     if (!authToken) {
-      res.redirect('/');
-      return res.status(503);
+      return res.json({ error: "token unavailable" });
     } else {
       const verified = jwt.verify(authToken, SECRET_KEY);
       console.log("Verified", verified);
@@ -17,7 +16,7 @@ module.exports = function authenticateToken(req, res, next) {
     }
     next();
   } catch (error) {
-    res.redirect('/');
-    res.status(401);
+    // res.status(401).send("Token Invalid");
+    res.redirect('/')
   }
 };

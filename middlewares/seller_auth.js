@@ -7,16 +7,17 @@ module.exports = function authenticateToken(req, res, next) {
     let authToken = req.cookies["AccessToken"];
 
     if (!authToken) {
-      res.redirect('/');
-      return res.status(503);
+      return res.json({ error: "token unavailable" });
+    }else{
+      const verified = jwt.verify(authToken, SELLER_KEY);
+      console.log("Verified", verified);
+      req.user = verified.seller;
+      req.authToken = authToken;
     }
-    const verified = jwt.verify(authToken, SELLER_KEY);
-    console.log("Verified", verified);
-    req.seller = verified.seller;
-    req.authToken = authToken;
     next();
   } catch (error) {
-    res.redirect('/');
-    res.status(401);
+    // res.status(401).send("Token Invalid");
+    res.redirect('/')
   }
 };
+
