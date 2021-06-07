@@ -20,7 +20,7 @@ router.post("/profile/:id", async(req, res) => {
     const password = req.body.password;
     const salt = await bcrypt.genSalt(10);
     req.body.password = await bcrypt.hash(password, salt);
-    const user = await User.findOneAndUpdate(_id, req.body);
+    const user = await seller.findOneAndUpdate(_id, req.body);
     await user.save();
     console.log(user);
     res.redirect('/seller/profile')

@@ -9,7 +9,7 @@ router.get("/update", async (req, res) => {
     console.log(seller_id);
     const getproducts = await all_products.find({ seller_id}).lean();
     console.log(getproducts);
-    res.render("seller_productUpdate", { layout: "update", getproducts });
+    res.render("seller_ProductUpdate", { layout: "update", getproducts });
   } catch (error) {
     res.send(`Internal Error Occurred: ${error._message}`);
   }
@@ -21,7 +21,7 @@ router.get("/electronics_update", async (req, res) => {
     console.log(seller_id);
     const getproducts = await all_products.find({ seller_id,category:"Electronics" }).lean();
     console.log(getproducts);
-    res.render("seller_productUpdate", { layout: "update", getproducts });
+    res.render("seller_ProductUpdate", { layout: "update", getproducts });
   } catch (error) {
     res.status(500).send(`Internal Error Occurred: ${error._message}`);
   }
@@ -33,7 +33,7 @@ router.get("/grocery_update", async (req, res) => {
     console.log(seller_id);
     const getproducts = await all_products.find({ seller_id,category:"Grocery" }).lean();
     console.log(getproducts);
-    res.render("seller_productUpdate", { layout: "update", getproducts });
+    res.render("seller_ProductUpdate", { layout: "update", getproducts });
   } catch (error) {
     res.status(500).send(`Internal Error Occurred: ${error._message}`);
   }
@@ -45,7 +45,7 @@ router.get("/homeEssentials_update", async (req, res) => {
   console.log(seller_id);
   const getproducts = await all_products.find({ seller_id ,category:"Home_Essentials"}).lean();
   console.log(getproducts);
-  res.render("seller_productUpdate", { layout: "update", getproducts });
+  res.render("seller_ProductUpdate", { layout: "update", getproducts });
  } catch (error) {
   res.status(500).send(`Internal Error Occurred: ${error._message}`);
  }
