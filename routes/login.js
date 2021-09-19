@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const mongoose = require("mongoose");
-const User = require("../../models/user");
-const Generate_token = require("../../functions/user_token");
+const User = require("../models/user");
+const Generate_token = require("../functions/user_token");
 const { check, validationResult } = require("express-validator");
-const jwt = require("jsonwebtoken");
+
 
 
 
@@ -20,21 +19,17 @@ async (req, res) => {
 
   if (!errors.isEmpty()) {
     const error = errors.array()
-    res.render("login", { layout: "main" , error})
+    return res.json(error.map(({msg})=> msg)).status(400)
   } 
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      const exist = {msg:"user not exists"};
-      res.render("login", { layout: "main" , exist})
-      return res.status(400)
+      res.status(403).json({msg:"user not exists"});
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      const errorpass = {msg:"Incorrect password !"};
-      res.render("login", { layout: "main" , errorpass})
-      return res.status(400)
+      res.status(409).json({msg:"Incorrect password !"})
     }
     // create token
     const payload = {
@@ -43,12 +38,12 @@ async (req, res) => {
       },
     };
     const access_token = Generate_token(payload);
-    res.cookie("accessToken", access_token);
-    res.redirect("/user/home");
-  } catch (error) {
+    res.json({"token": access_token , "user": user});;
+  } catch (err) {
     console.log(err.message);
     res.status(500).send("Error in saving");
   }
 });
 
 module.exports = router;
+
